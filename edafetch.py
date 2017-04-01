@@ -47,7 +47,7 @@ def win7and8pf(fol1,pf,pfl00,fomv):
 	mdh5 = "".join(hh)
 	list1.append(mdh5)
 		
-	#Execution Counter(Win7)
+	#Run Counter(Win7)
 	if fomv == "17":
 		pf.seek(152)
 		pp = binascii.hexlify(pf.read(4))
@@ -55,7 +55,7 @@ def win7and8pf(fol1,pf,pfl00,fomv):
 		list.reverse(pp2)
 		cnt = int(("".join(pp2)),16)
 	
-	#Execution Counter(Win8)
+	#Run Counter(Win8)
 	if fomv == "1a":
 		pf.seek(208)
 		pp = binascii.hexlify(pf.read(4))
@@ -94,7 +94,7 @@ def win7and8pf(fol1,pf,pfl00,fomv):
 	list1.append(vol2)		
 	list1.append(cnt)
 		
-	#Latest Execution Time Information(Win7)
+	#Latest Run Time Information(Win7)
 	if fomv == "17":
 		pf.seek(128)
 		sp = re.split('(..)',binascii.hexlify(pf.read(8)))[1::2]
@@ -103,7 +103,7 @@ def win7and8pf(fol1,pf,pfl00,fomv):
 		ttt2 = time.strftime('%Y/%m/%d %H:%M:%S',time.strptime(ttt))
 		list1.append(ttt2)
 	
-	#Latest Execution Time Information(Win8)
+	#Latest Run Time Information(Win8)
 	if fomv == "1a":
 		loca = 128
 		while loca < 193:
@@ -171,7 +171,7 @@ def win7and8pf(fol1,pf,pfl00,fomv):
 		fna2 = binascii.a2b_hex("".join(fna))
         list_csv.append(list1)
 
-	retsu1 = ["Machine name","Prefetch file name","Hash","File path","Number of executions","Date and time1","Date and time2","Date and time3","Date and time4","Date and time5","Date and time6","Date and time7","Date and time8"]
+	retsu1 = ["Machine name","Prefetch file name","Hash","File path","Run Count","Date and time1","Date and time2","Date and time3","Date and time4","Date and time5","Date and time6","Date and time7","Date and time8"]
 	retsu3 = []
 	
 	with open("prefetch_list.csv","w") as pfile:   #Open New File ( prefetch list file )
