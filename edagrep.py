@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: UTF-8
 
+# This file is created for analyzing pagefile.sys.
+# Typical APT Attacker left the evidence on pagefile.sys.
+
 import sys
 import binascii
 import re
